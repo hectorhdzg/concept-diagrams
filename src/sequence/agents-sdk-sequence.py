@@ -4,7 +4,7 @@ Shows the runtime flow: request arrives, spans are created, exported.
 """
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "lib"))
 
 from sequence_diagram import SequenceDiagram
 
@@ -74,6 +74,6 @@ sd.reply("agent_app", "core", "Response")
 sd.reply("core", "hosting", "HTTP response")
 sd.reply("hosting", "channel", "Reply message")
 
-out = Path(__file__).resolve().parent / "agents-sdk-sequence.excalidraw"
+out = Path(__file__).resolve().parent.parent.parent / "output" / "agents-sdk-sequence.excalidraw"
 sd.save(out)
 print(f"Created: {out}")

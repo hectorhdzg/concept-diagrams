@@ -4,7 +4,7 @@ Shows the runtime flow: app initialization, request instrumentation, export.
 """
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "lib"))
 
 from sequence_diagram import SequenceDiagram
 
@@ -60,6 +60,6 @@ sd.call("otlp_exp", "otlp_exp", "")
 sd.self_call("otlp_exp", "Send to OTel Collector")
 sd.end_group()
 
-out = Path(__file__).resolve().parent / "azure-monitor-sequence.excalidraw"
+out = Path(__file__).resolve().parent.parent.parent / "output" / "azure-monitor-sequence.excalidraw"
 sd.save(out)
 print(f"Created: {out}")

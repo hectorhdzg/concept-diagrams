@@ -6,7 +6,7 @@ Horizontal layout: 5 rows, components spread wide.
 """
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "lib"))
 
 from excalidraw_generator import (
     ArchitectureDiagram, ArchitectureStyle, DiagramStyle,
@@ -164,6 +164,6 @@ box_text = [e for e in arch.elements if e.get("type") == "text" and not e.get("c
 
 arch.elements = areas + arrows + boxes + box_text + arrow_labels + area_labels
 
-out = Path(__file__).resolve().parent / "agents-sdk-observability.excalidraw"
+out = Path(__file__).resolve().parent.parent.parent / "output" / "agents-sdk-observability.excalidraw"
 arch.save(out)
 print(f"Created: {out}")

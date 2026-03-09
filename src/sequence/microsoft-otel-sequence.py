@@ -4,7 +4,7 @@ Shows the runtime flow: unified distro init, multi-exporter pipeline.
 """
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "lib"))
 
 from sequence_diagram import SequenceDiagram
 
@@ -68,6 +68,6 @@ sd.self_call("exporters", "Agent365 Exporter -> A365 Backend")
 sd.self_call("exporters", "OTLP Exporter -> OTel Collector")
 sd.end_group()
 
-out = Path(__file__).resolve().parent / "microsoft-otel-sequence.excalidraw"
+out = Path(__file__).resolve().parent.parent.parent / "output" / "microsoft-otel-sequence.excalidraw"
 sd.save(out)
 print(f"Created: {out}")
