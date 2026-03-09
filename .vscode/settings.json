@@ -1,0 +1,9 @@
+{
+    "vscode-nmake-tools.workspaceBuildDirectories": [],
+    "json.schemas": [
+        {
+            "fileMatch": ["examples/*.json", "diagrams/*.json"],
+            "url": "./schema/diagram.schema.json"
+        }
+    ]
+}
